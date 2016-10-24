@@ -8,8 +8,8 @@ ipNum = sys.argv[1]
 
 portNum = int(sys.argv[2])
 
-#recieveSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-#recieveSocket.bind(("127.0.0.2", portNum))
+recieveSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+recieveSocket.bind((socket.gethostbyname(socket.gethostname()), portNum))
 while True:
 
 	message = raw_input("Message to send to server: ")
@@ -18,9 +18,9 @@ while True:
 	
 	sendSocket.sendto(message, (ipNum, portNum))
 	#
-	print sendSocket.getsockname()[0] #Prints zeros?
+	#print sendSocket.getsockname()[0] #Prints zeros?
 	#
-	data,addr = sendSocket.recvfrom(1024)
+	data,addr = recieveSocket.recvfrom(1024)
 	
 	print "response from server with IP: ",addr[0]
 	

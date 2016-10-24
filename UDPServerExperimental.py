@@ -1,5 +1,5 @@
 #UDPServerExperimental
-
+#Both server and client must! be instantiated with the same port number
 import socket
 
 import sys
@@ -18,6 +18,6 @@ while(True):
 	responseSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	messageResponse = data.upper()
 	#port num is addr[1] ip is addr[0]
-	responseSocket.sendto(messageResponse,(addr[0],addr[1]))
+	responseSocket.sendto(messageResponse,(addr[0],portNum))
 	print addr[0], addr[1]
 	print messageResponse

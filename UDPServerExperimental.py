@@ -6,7 +6,7 @@ import sys
 
 portNum = int(sys.argv[1])
 ipNum = socket.gethostbyname(socket.gethostname())
-
+print "Local IP: ", ipNum
 mySocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 mySocket.bind((ipNum, portNum))
@@ -19,3 +19,5 @@ while(True):
 	messageResponse = data.upper()
 	#port num is addr[1] ip is addr[0]
 	responseSocket.sendto(messageResponse,(addr[0],addr[1]))
+	print addr[0], addr[1]
+	print messageResponse

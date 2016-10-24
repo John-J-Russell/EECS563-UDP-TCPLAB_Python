@@ -1,5 +1,7 @@
 #UDPServer.py
-
+#Of note: The Client program MUST specify 127.0.0.1 in its CLI instantiation
+#otherwise the traffic seems to get lost.
+#Use CTRL+Break on Windows machines to terminate program.
 import socket
 
 import sys
@@ -14,7 +16,6 @@ mySocket.bind((ipNum, portNum))
 while(True):
 	data,addr = mySocket.recvfrom(1024) #sets buffer to 1024 bytes?
 	print "Recieved a datagram from IP:", addr[0]
-	#print "address sent from: ",addr[0],"Port number: ",addr[1], "Data recieved: ",data
 	responseSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	messageResponse = data.upper()
 	#port num is addr[1] ip is addr[0]

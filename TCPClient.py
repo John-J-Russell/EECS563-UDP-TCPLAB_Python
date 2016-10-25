@@ -17,7 +17,7 @@ sendingSocket.connect((ipNum,portNum))
 while 1:	
 	sendingSocket.send(message)
 	data = sendingSocket.recv(1024)
-	print data
+	print "Response from server is:", data
 	message = raw_input("Message to send to server: ")
 	
 s.close()

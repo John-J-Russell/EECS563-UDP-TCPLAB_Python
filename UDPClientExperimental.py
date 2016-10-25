@@ -1,5 +1,5 @@
 #UDPClientExperimental
-#REQUIREMENTS: both server and client must have same port number specified at CLI
+#REQUIREMENTS: both server and client must have same port number specified at command line launching
 #Launch format for this program is "python UDPClientExperimental.py [IP of target server] [PORT#]"
 
 #Note: method of obtaining local IP is considered "unreliable", and as such

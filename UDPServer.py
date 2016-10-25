@@ -1,7 +1,6 @@
 #UDPServer.py
-#Of note: The Client program MUST specify 127.0.0.1 in its CLI instantiation
-#otherwise the traffic seems to get lost.
 #Use CTRL+Break on Windows machines to terminate program.
+
 import socket
 
 import sys

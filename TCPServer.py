@@ -17,10 +17,9 @@ mySocket.listen(1)
 
 conn, addr = mySocket.accept()
 
-
 while 1:
 	data = conn.recv(bufferSize)
 	if not data: break
-	print "recieved data:", data
-	conn.send(data.upper()) #echos data back to sender? Or an ACK?
+	print "recieved data from IP:", addr[0]
+	conn.send(data.upper())
 conn.close() #will close connection if while loop breaks

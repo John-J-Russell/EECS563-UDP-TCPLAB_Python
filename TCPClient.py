@@ -1,5 +1,6 @@
 #TCPClient.py
-
+#Of note: The Client program MUST specify 127.0.0.1 in its CLI instantiation
+#otherwise the traffic seems to get lost.
 import socket
 
 import sys

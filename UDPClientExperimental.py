@@ -25,7 +25,8 @@ while True:
 	
 	sendSocket.sendto(message, (ipNum, portNum))
 	
-	data,addr = recieveSocket.recvfrom(1024)
+	#data,addr = recieveSocket.recvfrom(1024)
+	data,addr = sendSocket.recvfrom(1024)
 	
 	print "response from server with IP: ",addr[0]
 	

@@ -17,5 +17,6 @@ while(True):
 	print "Recieved a datagram from IP:", addr[0]
 	responseSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	messageResponse = data.upper()
+	print addr[0], addr[1]
 	#port num is addr[1] ip is addr[0]
 	responseSocket.sendto(messageResponse,(addr[0],addr[1]))
